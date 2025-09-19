@@ -33,7 +33,7 @@ npm run build
 - 📱 **Responsive Design** - Works on desktop and mobile devices
 - 🎨 **Material Design** - Clean, professional interface
 - ✅ **Type Safety** - Full TypeScript integration
-- 🧪 **Well Tested** - Unit tests with good coverage
+- 🧪 **Tested** - Unit tests in utilities and components
 
 ## Documentation
 
