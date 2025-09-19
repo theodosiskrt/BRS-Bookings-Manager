@@ -108,6 +108,7 @@ const CreateBooking = ({
     <>
       <Button
         onClick={openModal}
+        data-testid="create-booking-open-btn"
         size={largeLayout ? "large" : "small"}
         variant="contained"
         startIcon={<Add />}
@@ -134,6 +135,9 @@ const CreateBooking = ({
               onChange={(e) => handleChange("customer", e.target.value)}
               onBlur={() => handleBlur("customer")}
               {...getFieldError("customer", "Customer is required")}
+              slotProps={{
+                htmlInput: { "data-testid": "create-booking-customer" },
+              }}
               fullWidth
               required
             />
@@ -144,6 +148,9 @@ const CreateBooking = ({
               onChange={(e) => handleChange("vessel", e.target.value)}
               onBlur={() => handleBlur("vessel")}
               {...getFieldError("vessel", "Vessel is required")}
+              slotProps={{
+                htmlInput: { "data-testid": "create-booking-vessel" },
+              }}
               fullWidth
               required
             />
@@ -172,7 +179,10 @@ const CreateBooking = ({
               {...getFieldError("startDate", "Start date is required")}
               fullWidth
               required
-              slotProps={{ inputLabel: { shrink: true } }}
+              slotProps={{
+                inputLabel: { shrink: true },
+                htmlInput: { "data-testid": "create-booking-startDate" },
+              }}
             />
 
             <TextField
