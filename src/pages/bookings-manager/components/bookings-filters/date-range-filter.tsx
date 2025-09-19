@@ -68,6 +68,11 @@ const DateRangeFilter = ({
               type="date"
               value={temp.from}
               onChange={(e) => setTemp((p) => ({ ...p, from: e.target.value }))}
+              slotProps={
+                temp.to
+                  ? { input: { inputProps: { max: temp.to } } }
+                  : undefined
+              }
               fullWidth
             />
           </Box>
@@ -78,6 +83,11 @@ const DateRangeFilter = ({
               type="date"
               value={temp.to}
               onChange={(e) => setTemp((p) => ({ ...p, to: e.target.value }))}
+              slotProps={
+                temp.from
+                  ? { input: { inputProps: { min: temp.from } } }
+                  : undefined
+              }
               fullWidth
             />
           </Box>
