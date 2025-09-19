@@ -1,4 +1,3 @@
-import React from "react";
 import { describe, test, expect, vi } from "vitest";
 import CreateBooking from "./create-booking";
 import userEvent from "@testing-library/user-event";
