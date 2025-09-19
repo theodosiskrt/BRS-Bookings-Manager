@@ -29,9 +29,7 @@ The BRS Bookings Manager is a modern web application built for managing vessel b
 ### Testing Framework
 
 - Vitest
-
 - React Testing Library
-
 - jsdom
 
 ### Code Quality & Development Tools
