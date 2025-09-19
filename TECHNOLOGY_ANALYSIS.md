@@ -159,6 +159,16 @@ Examples of custom hooks used:
 - Memoization of expensive computations
 - Code splitting with React.lazy()
 
+### 9. **Development Environment Improvements**
+
+I would take the time to set up:
+
+- **Prettier** for even more consistent code formatting
+- **Husky** for pre-commit hooks to run linting/tests
+- **Commitlint** for standardized commit messages
+- **Eslint rules** to enforce best practices
+- **Absolute imports** for cleaner import paths
+
 ## Conclusion
 
 For large-scale expansion, the key areas I would focus on are:
