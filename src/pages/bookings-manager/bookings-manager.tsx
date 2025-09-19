@@ -33,12 +33,7 @@ const BookingsManager = () => {
           </Link>
         </Box>
         <Box sx={styles.actionsContainer}>
-          <Box
-            sx={{
-              flexGrow: 1,
-              flexShrink: 1,
-            }}
-          >
+          <Box sx={styles.searchContainer}>
             <BookingsSearch
               filters={filters}
               setFilters={setFilters}

@@ -33,18 +33,11 @@ const BookingPreview = ({
       aria-labelledby="booking-modal-title"
       aria-describedby="booking-modal-description"
     >
-      <Box sx={styles.container} position="relative">
+      <Box sx={styles.container}>
         {selectedBooking && (
           <>
-            <Grid
-              display="flex"
-              direction="row"
-              justifyContent="space-between"
-              size={12}
-              gap={1}
-              mb={2}
-            >
-              <Grid display="flex" direction="row" gap={1} alignItems="center">
+            <Grid sx={styles.headerGrid}>
+              <Grid sx={styles.actionsGrid}>
                 <Typography variant="h6" id="booking-modal-title">
                   Booking Details
                 </Typography>
