@@ -172,22 +172,22 @@ export const getDesignTokens = (mode: PaletteMode) => ({
   },
   shadows:
     mode === "light"
-      ? ([
+      ? [
           "none",
           "0px 1px 3px rgba(0, 0, 0, 0.05), 0px 1px 2px rgba(0, 0, 0, 0.1)",
           "0px 4px 6px rgba(0, 0, 0, 0.05), 0px 2px 4px rgba(0, 0, 0, 0.08)",
           "0px 10px 15px rgba(0, 0, 0, 0.08), 0px 4px 6px rgba(0, 0, 0, 0.05)",
           "0px 20px 25px rgba(0, 0, 0, 0.1), 0px 10px 10px rgba(0, 0, 0, 0.04)",
-          ...Array(20).fill("0px 25px 50px rgba(0, 0, 0, 0.15)"),
-        ] as const)
-      : ([
+          ...Array(20).fill("0px 25px 50px rgba(0, 0, 0, 0.15)"), // Needed by MUI default shadows
+        ]
+      : [
           "none",
           "0px 1px 3px rgba(0, 0, 0, 0.3), 0px 1px 2px rgba(0, 0, 0, 0.4)",
           "0px 4px 6px rgba(0, 0, 0, 0.3), 0px 2px 4px rgba(0, 0, 0, 0.35)",
           "0px 10px 15px rgba(0, 0, 0, 0.35), 0px 4px 6px rgba(0, 0, 0, 0.3)",
           "0px 20px 25px rgba(0, 0, 0, 0.4), 0px 10px 10px rgba(0, 0, 0, 0.25)",
-          ...Array(20).fill("0px 25px 50px rgba(0, 0, 0, 0.5)"),
-        ] as const),
+          ...Array(20).fill("0px 25px 50px rgba(0, 0, 0, 0.5)"), // Needed by MUI default shadows
+        ],
   components: {
     MuiButton: {
       styleOverrides: {
@@ -244,22 +244,6 @@ export const getDesignTokens = (mode: PaletteMode) => ({
             mode === "light"
               ? "1px solid rgba(0, 0, 0, 0.06)"
               : "1px solid rgba(255, 255, 255, 0.1)",
-        },
-        elevation1: {
-          boxShadow:
-            mode === "light"
-              ? "0px 1px 3px rgba(0, 0, 0, 0.05), 0px 1px 2px rgba(0, 0, 0, 0.1)"
-              : "0px 1px 3px rgba(0, 0, 0, 0.3), 0px 1px 2px rgba(0, 0, 0, 0.4)",
-        },
-      },
-    },
-    MuiTableCell: {
-      styleOverrides: {
-        root: {
-          borderColor:
-            mode === "light"
-              ? "rgba(0, 0, 0, 0.06)"
-              : "rgba(255, 255, 255, 0.1)",
         },
         head: {
           fontWeight: 600,

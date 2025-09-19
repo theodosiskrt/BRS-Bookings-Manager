@@ -1,6 +1,7 @@
 import React from "react";
 import { getDesignTokens } from "./theme";
-import { createTheme, type PaletteMode } from "@mui/material/styles";
+import { createTheme } from "@mui/material/styles";
+import type { PaletteMode } from "@mui/material";
 
 export const useColorTheme = () => {
   const [mode, setMode] = React.useState<PaletteMode>("light");
@@ -9,7 +10,7 @@ export const useColorTheme = () => {
     setMode((prevMode) => (prevMode === "light" ? "dark" : "light"));
 
   const modifiedTheme = React.useMemo(
-    () => createTheme(getDesignTokens("light")),
+    () => createTheme(getDesignTokens(mode) as any),
     [mode]
   );
 

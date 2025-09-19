@@ -73,7 +73,8 @@ const BookingsList = ({ bookings = [], error = null }: BookingsListProps) => {
                 <TableCell colSpan={5}>
                   <Box sx={styles.emptyState}>
                     <Typography variant="body1" color="text.secondary">
-                      No bookings found. Try searching by customer name.
+                      No bookings to show. Try searching by customer name (or
+                      search with an empty query to load all).
                     </Typography>
                   </Box>
                 </TableCell>
