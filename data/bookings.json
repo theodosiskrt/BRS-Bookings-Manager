@@ -31,6 +31,118 @@
       "status": "pending",
       "startDate": "2027-02-03",
       "endDate": "2027-02-05"
+    },
+    {
+      "id": "BK-1005",
+      "customer": "Maritime Solutions",
+      "vessel": "Baltic Wind",
+      "status": "confirmed",
+      "startDate": "2026-03-15",
+      "endDate": "2026-03-20"
+    },
+    {
+      "id": "BK-1006",
+      "customer": "DeepSea Logistics",
+      "vessel": "Aurora Dawn",
+      "status": "pending",
+      "startDate": "2026-04-01",
+      "endDate": "2026-04-07"
+    },
+    {
+      "id": "BK-1007",
+      "customer": "Coastal Marine",
+      "vessel": "Storm Rider",
+      "status": "confirmed",
+      "startDate": "2025-12-20",
+      "endDate": "2025-12-28"
+    },
+    {
+      "id": "BK-1008",
+      "customer": "Pacific Shipping",
+      "vessel": "Wave Crest",
+      "status": "cancelled",
+      "startDate": "2026-02-10",
+      "endDate": "2026-02-14"
+    },
+    {
+      "id": "BK-1009",
+      "customer": "Northern Fleet",
+      "vessel": "Ice Breaker",
+      "status": "confirmed",
+      "startDate": "2026-05-12",
+      "endDate": "2026-05-18"
+    },
+    {
+      "id": "BK-1010",
+      "customer": "Horizon Marine",
+      "vessel": "Sea Eagle",
+      "status": "pending",
+      "startDate": "2026-03-08",
+      "endDate": "2026-03-12"
+    },
+    {
+      "id": "BK-1011",
+      "customer": "Atlantic Works",
+      "vessel": "Thunder Bay",
+      "status": "confirmed",
+      "startDate": "2026-06-22",
+      "endDate": "2026-06-30"
+    },
+    {
+      "id": "BK-1012",
+      "customer": "Blue Ocean Corp",
+      "vessel": "Tide Runner",
+      "status": "cancelled",
+      "startDate": "2026-01-15",
+      "endDate": "2026-01-18"
+    },
+    {
+      "id": "BK-1013",
+      "customer": "SeaPort Industries",
+      "vessel": "Wind Chaser",
+      "status": "pending",
+      "startDate": "2026-07-03",
+      "endDate": "2026-07-10"
+    },
+    {
+      "id": "BK-1014",
+      "customer": "Gulf Marine",
+      "vessel": "Reef Guardian",
+      "status": "confirmed",
+      "startDate": "2026-04-20",
+      "endDate": "2026-04-25"
+    },
+    {
+      "id": "BK-1015",
+      "customer": "Tidal Energy Co",
+      "vessel": "Current Flow",
+      "status": "pending",
+      "startDate": "2026-08-15",
+      "endDate": "2026-08-22"
+    },
+    {
+      "id": "BK-1016",
+      "customer": "Offshore Dynamics",
+      "vessel": "Deep Horizon",
+      "status": "confirmed",
+      "startDate": "2026-09-05",
+      "endDate": "2026-09-12"
+    },
+    {
+      "id": "BK-1017",
+      "customer": "Marine Ventures",
+      "vessel": "Sailor's Dream",
+      "status": "cancelled",
+      "startDate": "2026-03-25",
+      "endDate": "2026-03-30"
+    },
+    {
+      "id": "BK-1018",
+      "customer": "Aqua Logistics",
+      "vessel": "Blue Navigator",
+      "status": "pending",
+      "startDate": "2026-10-12",
+      "endDate": "2026-10-18"
     }
   ]
 }

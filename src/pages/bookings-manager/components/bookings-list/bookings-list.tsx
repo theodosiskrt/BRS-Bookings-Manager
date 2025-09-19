@@ -12,7 +12,7 @@ import {
   Box,
 } from "@mui/material";
 import { getStyles } from "./bookings-list.style";
-import type { Booking } from "../../../../types";
+import type { Booking } from "../../types";
 import { formatDateRange } from "../../../../utils";
 import BookingPreview from "../booking-preview";
 import { useLayoutSize } from "../../../../hooks";
@@ -46,16 +46,18 @@ const BookingsList = ({ bookings = [], error = null }: BookingsListProps) => {
   };
 
   return (
-    <>
+    <Box
+      sx={{ display: "flex", flexDirection: "column", flex: 1, minHeight: 0 }}
+    >
       <TableContainer component={Paper}>
-        <Table sx={styles.table}>
+        <Table sx={styles.table} stickyHeader>
           <TableHead>
             <TableRow>
-              <TableCell component={"th"}>ID</TableCell>
-              <TableCell>Customer</TableCell>
-              <TableCell>Vessel</TableCell>
-              <TableCell>Dates</TableCell>
-              <TableCell>Status</TableCell>
+              <TableCell style={styles.headerCell}>ID</TableCell>
+              <TableCell style={styles.headerCell}>Customer</TableCell>
+              <TableCell style={styles.headerCell}>Vessel</TableCell>
+              <TableCell style={styles.headerCell}>Dates</TableCell>
+              <TableCell style={styles.headerCell}>Status</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -112,7 +114,7 @@ const BookingsList = ({ bookings = [], error = null }: BookingsListProps) => {
         selectedBooking={selectedBooking}
         onClose={handleCloseModal}
       />
-    </>
+    </Box>
   );
 };
 

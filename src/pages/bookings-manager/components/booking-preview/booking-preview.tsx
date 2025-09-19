@@ -10,7 +10,7 @@ import {
 import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
 import CloseIcon from "@mui/icons-material/Close";
-import type { Booking } from "../../../../types";
+import type { Booking } from "../../types";
 import { formatDateRange } from "../../../../utils";
 import { getStyles } from "./booking-preview.style";
 import { useLayoutSize } from "../../../../hooks";

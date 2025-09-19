@@ -1,20 +1,23 @@
 import { Search } from "@mui/icons-material";
 import { Button, Grid, TextField } from "@mui/material";
-import type { Booking } from "../../../../types";
+import type { Booking, Filters } from "../../types";
 import { useCallback, useState } from "react";
 import { bookingsApi } from "../../../../api";
+import BookingsFilters from "../bookings-filters";
 
 const BookingsSearch = ({
   setBookings,
   setError,
+  filters,
+  setFilters,
 }: {
+  filters: Filters;
+  setFilters: (filters: Filters) => void;
   setBookings: (bookings: Booking[]) => void;
   setError: (error: string) => void;
 }) => {
   const [query, setQuery] = useState("");
   const [loading, setLoading] = useState(false);
-
-  console.log(query);
 
   const onSearch = useCallback(() => {
     setLoading(true);
@@ -33,6 +36,7 @@ const BookingsSearch = ({
       }}
     >
       <Grid size={12} sx={{ display: "flex", gap: 2 }}>
+        <BookingsFilters filters={filters} setFilters={setFilters} />
         <TextField
           value={query}
           autoComplete=""

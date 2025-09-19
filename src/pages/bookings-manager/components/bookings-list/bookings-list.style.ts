@@ -22,5 +22,10 @@ export const getStyles = (theme: Theme, largeLayout: boolean) => ({
     justifyContent: "center",
     gap: 1,
   },
-  tableCell: { p: largeLayout ? 2 : 1 },
+  headerCell: {
+    backgroundColor: theme.palette.background.paper,
+  },
+  tableCell: {
+    p: largeLayout ? 2 : 1,
+  },
 });

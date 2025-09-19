@@ -1,5 +1,5 @@
 import mockBookings from "../../data/bookings.json";
-import type { Booking } from "../types";
+import type { Booking } from "../pages/bookings-manager/types";
 import axios from "./config";
 /**
  * API methods for the bookings api

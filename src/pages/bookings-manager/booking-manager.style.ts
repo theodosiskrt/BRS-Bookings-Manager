@@ -7,8 +7,8 @@ export const getStyles = (largeLayout: boolean) => ({
   container: {
     display: "flex",
     flexDirection: "column",
-    mt: largeLayout ? 4 : 2,
-    mx: largeLayout ? 4 : 2,
+    flex: 1,
+    m: largeLayout ? 4 : 2,
     gap: 2,
   },
   headerContainer: {

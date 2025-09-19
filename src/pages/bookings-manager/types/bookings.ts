@@ -6,3 +6,11 @@ export type Booking = {
   startDate: string;
   endDate: string;
 };
+
+export type Filters = {
+  status: "all" | "pending" | "confirmed" | "cancelled";
+  date: {
+    from: string;
+    to: string;
+  };
+};

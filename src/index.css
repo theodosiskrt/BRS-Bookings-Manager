@@ -1,4 +1,16 @@
-body{
-    margin:0;
-    background-color:#fafafa ;
+/* Global layout helpers to prevent viewport overflow and enable proper scrolling */
+html, body, #root {
+    height: 100%;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body, #root {
+    display:flex;
+    flex:1;
+    margin: 0;
+    background-color: #fafafa;
+    min-height: 100vh;
 }
