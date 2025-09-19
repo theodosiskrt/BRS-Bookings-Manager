@@ -10,33 +10,33 @@ The BRS Bookings Manager is a modern web application built for managing vessel b
 
 ### Frontend Framework & Build Tools
 
-- **React 18/19**
-- **TypeScript**
-- **Vite**
+- React 18/19
+- TypeScript
+- Vite
 
 ### UI/UX Framework
 
-- **Material-UI (MUI) v7**
+- Material-UI (MUI) v7
 
 ### State Management & Data Flow
 
-#### - **React Hooks (useState, useMemo, useContext)**
+- React Hooks (useState, useMemo, useContext)
 
 ### HTTP Client & API Layer
 
-#### - **Axios**
+- Axios
 
 ### Testing Framework
 
-#### - **Vitest**
+- Vitest
 
-#### - **React Testing Library**
+- React Testing Library
 
-#### - **jsdom**
+- jsdom
 
 ### Code Quality & Development Tools
 
-#### - **ESLint with TypeScript**
+- ESLint with TypeScript
 
 ## Architecture Patterns
 
