@@ -4,8 +4,6 @@
 
 The BRS Bookings Manager is a modern web application built for managing vessel bookings in the maritime industry. It provides functionality to search, filter, view, and create bookings with a clean, responsive user interface.
 
-![Application Screenshot](https://github.com/user-attachments/assets/c9073d87-81c3-4bfc-bdc0-9f40c8620d3e)
-
 ## Core Technologies Used
 
 ### Frontend Framework & Build Tools
