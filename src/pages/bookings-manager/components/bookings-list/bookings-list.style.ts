@@ -38,4 +38,10 @@ export const getStyles = (theme: Theme, largeLayout: boolean) => ({
     py: 3,
     textAlign: "center",
   },
+  loaderContainer: {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    py: 3,
+  },
 });

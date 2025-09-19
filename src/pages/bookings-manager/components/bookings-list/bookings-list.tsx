@@ -10,6 +10,7 @@ import {
   useTheme,
   Typography,
   Box,
+  CircularProgress,
 } from "@mui/material";
 import { getStyles } from "./bookings-list.style";
 import type { Booking } from "../../types";
@@ -22,9 +23,14 @@ import { Warning } from "@mui/icons-material";
 type BookingsListProps = {
   bookings?: Booking[];
   error?: string | null;
+  loading?: boolean;
 };
 
-const BookingsList = ({ bookings = [], error = null }: BookingsListProps) => {
+const BookingsList = ({
+  bookings = [],
+  error = null,
+  loading = false,
+}: BookingsListProps) => {
   const largeLayout = useLayoutSize();
   const theme = useTheme();
   const styles = getStyles(theme, largeLayout);
@@ -65,6 +71,14 @@ const BookingsList = ({ bookings = [], error = null }: BookingsListProps) => {
                   <Box sx={styles.errorContainer}>
                     <Warning color="action" />
                     {error}
+                  </Box>
+                </TableCell>
+              </TableRow>
+            ) : loading ? (
+              <TableRow>
+                <TableCell colSpan={5}>
+                  <Box sx={styles.loaderContainer}>
+                    <CircularProgress />
                   </Box>
                 </TableCell>
               </TableRow>

@@ -12,14 +12,17 @@ const BookingsSearch = ({
   setError,
   filters,
   setFilters,
+  loading,
+  setLoading,
 }: {
   filters: Filters;
   setFilters: (filters: Filters) => void;
   setBookings: (bookings: Booking[]) => void;
   setError: (error: string) => void;
+  loading: boolean;
+  setLoading: (loading: boolean) => void;
 }) => {
   const [query, setQuery] = useState("");
-  const [loading, setLoading] = useState(false);
   const largeLayout = useLayoutSize();
 
   const styles = getStyles(largeLayout);
