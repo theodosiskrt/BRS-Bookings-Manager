@@ -46,7 +46,7 @@ const BookingsList = ({ bookings = [], error = null }: BookingsListProps) => {
   };
 
   return (
-    <Box sx={{ display: "flex", flex: 1, minHeight: 0 }}>
+    <Box sx={styles.container}>
       <TableContainer component={Paper}>
         <Table sx={styles.table} stickyHeader>
           <TableHead>
@@ -71,7 +71,7 @@ const BookingsList = ({ bookings = [], error = null }: BookingsListProps) => {
             ) : bookings.length === 0 ? (
               <TableRow>
                 <TableCell colSpan={5}>
-                  <Box py={3} textAlign="center">
+                  <Box sx={styles.emptyState}>
                     <Typography variant="body1" color="text.secondary">
                       No bookings found. Try searching by customer name.
                     </Typography>

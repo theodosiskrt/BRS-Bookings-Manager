@@ -29,4 +29,8 @@ export const getStyles = (largeLayout: boolean) => ({
     flexWrap: "wrap",
     maxWidth: "100%",
   },
+  searchContainer: {
+    flexGrow: 1,
+    flexShrink: 1,
+  },
 });

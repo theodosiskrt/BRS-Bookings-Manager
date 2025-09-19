@@ -3,6 +3,7 @@ import { Box } from "@mui/material";
 import StatusFilter from "./status-filter";
 import DateRangeFilter from "./date-range-filter";
 import type { Filters } from "../../types";
+import { getStyles } from "./bookings-filters.style";
 
 const BookingsFilters = ({
   filters,
@@ -11,6 +12,8 @@ const BookingsFilters = ({
   filters: Filters;
   setFilters: (filters: Filters) => void;
 }) => {
+  const styles = getStyles();
+
   // helper to update one of the filters while keeping the rest
   const changeSingleFilter = useCallback(
     (filter: "status" | "date", value: any) => {
@@ -20,7 +23,7 @@ const BookingsFilters = ({
   );
 
   return (
-    <Box display="flex" gap={1} alignItems="center">
+    <Box sx={styles.container}>
       {/* Status Filter */}
       <StatusFilter
         value={filters.status}

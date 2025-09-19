@@ -10,6 +10,7 @@ import {
   InputLabel,
 } from "@mui/material";
 import { DateRange, EventAvailable } from "@mui/icons-material";
+import { getStyles } from "./date-range-filter.style";
 
 const DateRangeFilter = ({
   value,
@@ -20,6 +21,7 @@ const DateRangeFilter = ({
 }) => {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const [temp, setTemp] = useState(value);
+  const styles = getStyles();
 
   const hasDate = !!(value.from || value.to);
 
@@ -58,8 +60,8 @@ const DateRangeFilter = ({
       </Tooltip>
 
       <Menu anchorEl={anchorEl} open={!!anchorEl} onClose={closeMenu}>
-        <Stack spacing={2} p={2}>
-          <Box>
+        <Stack spacing={2} sx={styles.menuContent}>
+          <Box sx={styles.dateInputContainer}>
             <InputLabel htmlFor="from-input">From date</InputLabel>
             <TextField
               id="from-input"
@@ -69,7 +71,7 @@ const DateRangeFilter = ({
               fullWidth
             />
           </Box>
-          <Box>
+          <Box sx={styles.dateInputContainer}>
             <InputLabel htmlFor="to-input">To date</InputLabel>
             <TextField
               id="to-input"
@@ -79,7 +81,7 @@ const DateRangeFilter = ({
               fullWidth
             />
           </Box>
-          <Box display="flex" gap={1} justifyContent="flex-end">
+          <Box sx={styles.buttonContainer}>
             <Button variant="outlined" size="small" onClick={clear}>
               Clear
             </Button>

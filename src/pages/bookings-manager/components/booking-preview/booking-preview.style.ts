@@ -11,4 +11,18 @@ export const getStyles = (theme: Theme, largeLayout: boolean) => ({
     borderRadius: 2,
     minWidth: largeLayout ? "400px" : "280px",
   },
+  headerGrid: {
+    display: "flex",
+    direction: "row",
+    justifyContent: "space-between",
+    size: 12,
+    gap: 1,
+    mb: 2,
+  },
+  actionsGrid: {
+    display: "flex",
+    direction: "row",
+    gap: 1,
+    alignItems: "center",
+  },
 });

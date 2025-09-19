@@ -29,4 +29,13 @@ export const getStyles = (theme: Theme, largeLayout: boolean) => ({
   table: {
     minWidth: 625,
   },
+  container: {
+    display: "flex",
+    flex: 1,
+    minHeight: 0,
+  },
+  emptyState: {
+    py: 3,
+    textAlign: "center",
+  },
 });
