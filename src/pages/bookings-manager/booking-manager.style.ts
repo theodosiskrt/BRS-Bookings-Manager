@@ -14,10 +14,15 @@ export const getStyles = (largeLayout: boolean) => ({
   headerContainer: {
     px: largeLayout ? 4 : 2,
     py: 2,
+    gap: 3,
     display: "flex",
     flexDirection: largeLayout ? "row" : "column",
-    gap: 3,
     justifyContent: "space-between",
+    alignItems: "center",
+  },
+  actionsContainer: {
+    display: "flex",
+    gap: 3,
     alignItems: "center",
   },
 });

@@ -20,7 +20,7 @@ const BookingsFilters = ({
   );
 
   return (
-    <Box display="flex" gap={1}>
+    <Box display="flex" gap={1} alignItems="center">
       {/* Status Filter */}
       <StatusFilter
         value={filters.status}

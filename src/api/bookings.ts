@@ -1,6 +1,6 @@
 import mockBookings from "../../data/bookings.json";
 import type { Booking } from "../pages/bookings-manager/types";
-import axios from "./config";
+
 /**
  * API methods for the bookings api
  *
@@ -17,7 +17,7 @@ export const bookingsApi = {
   getBookings: async (query: string): Promise<Booking[]> => {
     // const response = await axios.get("api/bookings");
 
-    return new Promise((resolve, reject) => {
+    return new Promise((resolve) => {
       const bookings = mockBookings.bookings.filter((booking) =>
         booking.customer.toLowerCase().includes(query.toLowerCase())
       );

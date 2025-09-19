@@ -3,6 +3,7 @@ import { useMemo, useState } from "react";
 import type { Filters } from "./types";
 import { getStyles } from "./booking-manager.style";
 import { BookingsList, BookingsSearch } from "./components";
+import CreateBooking from "./components/create-booking/create-booking";
 import { useLayoutSize } from "../../hooks";
 import type { Booking } from "./types";
 import { filterBookings } from "./utils";
@@ -25,12 +26,15 @@ const BookingsManager = () => {
     <Box sx={styles.container}>
       <Paper sx={styles.headerContainer}>
         <Typography variant="h4">Bookings Manager</Typography>
-        <BookingsSearch
-          filters={filters}
-          setFilters={setFilters}
-          setBookings={setBookings}
-          setError={setError}
-        />
+        <Box sx={styles.actionsContainer}>
+          <BookingsSearch
+            filters={filters}
+            setFilters={setFilters}
+            setBookings={setBookings}
+            setError={setError}
+          />
+          <CreateBooking setBookings={setBookings} />
+        </Box>
       </Paper>
       <BookingsList bookings={filteredBookings} error={error} />
     </Box>

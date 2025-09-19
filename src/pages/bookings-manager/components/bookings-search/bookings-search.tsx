@@ -4,6 +4,7 @@ import type { Booking, Filters } from "../../types";
 import { useCallback, useState } from "react";
 import { bookingsApi } from "../../../../api";
 import BookingsFilters from "../bookings-filters";
+import { styles } from "./bookings-search.style";
 
 const BookingsSearch = ({
   setBookings,
@@ -35,7 +36,7 @@ const BookingsSearch = ({
         onSearch();
       }}
     >
-      <Grid size={12} sx={{ display: "flex", gap: 2 }}>
+      <Grid size={12} sx={styles.container}>
         <BookingsFilters filters={filters} setFilters={setFilters} />
         <TextField
           value={query}
