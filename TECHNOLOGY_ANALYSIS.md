@@ -10,15 +10,13 @@ The BRS Bookings Manager is a modern web application built for managing vessel b
 
 ### Frontend Framework & Build Tools
 
-#### - **React 18/19**
+- **React 18/19**
+- **TypeScript**
+- **Vite**
 
-#### - **TypeScript**
+### UI/UX Framework
 
-#### - **Vite**
-
-### - UI/UX Framework
-
-#### - **Material-UI (MUI) v7**
+- **Material-UI (MUI) v7**
 
 ### State Management & Data Flow
 
