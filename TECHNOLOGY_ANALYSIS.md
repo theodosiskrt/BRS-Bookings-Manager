@@ -119,31 +119,39 @@ Examples of custom hooks used:
 
 ## What I would do differently if I had more time
 
-### 1. **State Management Enhancement**
+### 1. **UI Enhancements**
+
+**Custom Design System**: I would take more time to build a custom UI design system from scratch instead of relying on MUI defaults. This would mean:
+
+- Less limitations on the UI
+- More unique branding
+- Better performance by reducing unused CSS
+
+### 2. **State Management Enhancement**
 
 **Current Limitation**: Local state management becomes complex with growth
 
 **Recommended Solution**: **Zustand**, **Redux Toolkit** or **RxJS** for global state management
 
-### 2. **Real Backend Integration**
+### 3. **Real Backend Integration**
 
 **Current Limitation**: Mock API limits functionality
 
-### 3. **Translations & Localization**
+### 4. **Translations & Localization**
 
 **For Global Markets**:
 
 - **react-i18next** for multi-language support
 - Locale-specific date/currency formatting
 
-### 4. **Monitoring & Observability**
+### 5. **Monitoring & Observability**
 
 **I would use some of the following tools to monitor application health**:
 
 - **Sentry** for error tracking
 - **Google Analytics** for usage analytics
 
-### 5. **CI/CD & Deployment**
+### 6. **CI/CD & Deployment**
 
 **Recommended Setup**:
 
@@ -151,14 +159,14 @@ Examples of custom hooks used:
 - **Environment-specific deployments** (dev/staging/production)
 - **Deployment setup and configurations to Vercel/Firebase**
 
-### 6. **Testing Strategy Enhancement**
+### 7. **Testing Strategy Enhancement**
 
 **Recommended Additions**:
 
 - **E2E testing** with **Playwright** or **Cypress**
 - **Visual regression testing** with **Chromatic**
 
-### 7. **Performance Optimization**
+### 8. **Performance Optimization**
 
 **Recommended Enhancements**:
 
@@ -172,9 +180,10 @@ Examples of custom hooks used:
 
 For large-scale expansion, the key areas I would focus on are:
 
-1. **Robust state management** for complex data flows
-2. **Real backend integration** with proper database design
-3. **Performance optimization** for handling large datasets
-4. **Monitoring and observability** for production reliability
+1. **Custom Design System**: Building a unique design system for better branding and performance.
+2. **Robust state management** for complex data flows
+3. **Real backend integration** with proper database design
+4. **Performance optimization** for handling large datasets
+5. **Monitoring and observability** for production reliability
 
 The application's clean architecture and modern technology choices position it well for scaling to enterprise-level requirements while maintaining developer productivity and code quality.
