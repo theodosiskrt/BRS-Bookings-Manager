@@ -38,7 +38,11 @@ const BookingPreview = ({
           <>
             <Grid sx={styles.headerGrid}>
               <Grid sx={styles.actionsGrid}>
-                <Typography variant="h6" id="booking-modal-title">
+                <Typography
+                  variant="h6"
+                  id="booking-modal-title"
+                  data-testid="booking-preview-title"
+                >
                   Booking Details
                 </Typography>
                 <Tooltip title="Edit booking">
@@ -52,28 +56,32 @@ const BookingPreview = ({
                   </IconButton>
                 </Tooltip>
               </Grid>
-              <IconButton aria-label="close" onClick={onClose}>
+              <IconButton
+                aria-label="close"
+                onClick={onClose}
+                data-testid="booking-preview-close"
+              >
                 <CloseIcon />
               </IconButton>
             </Grid>
 
-            <Typography>
+            <Typography data-testid="booking-preview-id">
               <strong>ID:</strong> {selectedBooking.id}
             </Typography>
-            <Typography>
+            <Typography data-testid="booking-preview-customer">
               <strong>Customer:</strong> {selectedBooking.customer}
             </Typography>
-            <Typography>
+            <Typography data-testid="booking-preview-vessel">
               <strong>Vessel:</strong> {selectedBooking.vessel}
             </Typography>
-            <Typography>
+            <Typography data-testid="booking-preview-dates">
               <strong>Dates:</strong>{" "}
               {formatDateRange(
                 selectedBooking.startDate,
                 selectedBooking.endDate
               )}
             </Typography>
-            <Typography>
+            <Typography data-testid="booking-preview-status">
               <strong>Status:</strong> {selectedBooking.status}
             </Typography>
           </>

@@ -1,5 +1,5 @@
-import type { Filters } from "../types";
-import type { Booking } from "../types";
+import type { Filters } from "../../types";
+import type { Booking } from "../../types";
 
 /**
  *
