@@ -73,20 +73,6 @@ Examples of custom hooks used:
 - Clean component code
 - Easy testing of business logic
 
-## Application Screenshots
-
-### Main Interface
-
-![Main Interface](https://github.com/user-attachments/assets/c9073d87-81c3-4bfc-bdc0-9f40c8620d3e)
-
-### Search Functionality
-
-![Search Results](https://github.com/user-attachments/assets/547f74ed-5c05-40fb-b9aa-f91209faa290)
-
-### Create Booking Dialog
-
-![Create Booking](https://github.com/user-attachments/assets/738c10a5-4951-417a-9362-a639e6270da0)
-
 ## Strengths of Current Architecture
 
 ### 1. **Modern Development Stack**
