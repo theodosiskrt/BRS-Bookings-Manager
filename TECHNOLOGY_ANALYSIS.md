@@ -8,7 +8,7 @@ The BRS Bookings Manager is a modern web application built for managing vessel b
 
 ### Frontend Framework & Build Tools
 
-- React 18/19
+- React 19
 - TypeScript
 - Vite
 
@@ -141,7 +141,7 @@ Examples of custom hooks used:
 
 - **GitHub Actions** for CI/CD pipeline
 - **Environment-specific deployments** (dev/staging/production)
-- **Deployment setup and configurations to Vercel/Firebase**
+- **Deployment setup and configurations to Firebase**
 
 ### 7. **Testing Strategy Enhancement**
 
@@ -158,7 +158,6 @@ Examples of custom hooks used:
 - Pagination or infinite scrolling
 - Memoization of expensive computations
 - Code splitting with React.lazy()
-- Service Workers for offline functionality
 
 ## Conclusion
 
