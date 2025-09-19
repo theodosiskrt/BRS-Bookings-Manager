@@ -92,7 +92,6 @@ Examples of custom hooks used:
 - Fast hot reload during development
 - Type checking prevents errors
 - Comprehensive linting rules
-- Good test coverage
 
 ### 4. **Maintainable Code**
 
