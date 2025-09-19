@@ -1,29 +1,57 @@
 export const getStyles = (largeLayout: boolean) => ({
-  row: {
-    "&:hover": {
-      backgroundColor: "red",
-    },
-  },
   container: {
     display: "flex",
     flexDirection: "column",
     flex: 1,
     minWidth: 0,
-    m: largeLayout ? 4 : 2,
-    gap: 2,
+    minHeight: "100vh",
+    backgroundColor: "background.default",
+    padding: largeLayout ? 3 : 2,
+    gap: 3,
   },
   headerContainer: {
-    px: largeLayout ? 4 : 2,
-    py: 2,
+    px: largeLayout ? 4 : 3,
+    py: 3,
     gap: 3,
     display: "flex",
     flexWrap: "wrap",
     justifyContent: "space-between",
     alignItems: "center",
+    backgroundColor: "background.paper",
+    borderRadius: 2,
+    boxShadow: 1,
+    border: "1px solid",
+    borderColor: "divider",
+    transition: "all 0.2s ease-in-out",
+    "&:hover": {
+      boxShadow: 2,
+    },
+  },
+  titleSection: {
+    display: "flex",
+    flexDirection: "column",
+    gap: 0.5,
+  },
+  title: {
+    background: "linear-gradient(135deg, primary.main, secondary.main)",
+    backgroundClip: "text",
+    WebkitBackgroundClip: "text",
+    WebkitTextFillColor: "transparent",
+    fontWeight: 700,
+    letterSpacing: "-0.02em",
+  },
+  subtitle: {
+    color: "text.secondary",
+    fontSize: "0.875rem",
+    textDecoration: "none",
+    transition: "color 0.2s ease-in-out",
+    "&:hover": {
+      color: "primary.main",
+    },
   },
   actionsContainer: {
     display: "flex",
-    gap: 5,
+    gap: 2,
     alignItems: "center",
     justifyContent: "flex-end",
     flexWrap: "wrap",
@@ -32,5 +60,18 @@ export const getStyles = (largeLayout: boolean) => ({
   searchContainer: {
     flexGrow: 1,
     flexShrink: 1,
+    minWidth: largeLayout ? 300 : 200,
+  },
+  contentContainer: {
+    backgroundColor: "background.paper",
+    borderRadius: 2,
+    boxShadow: 1,
+    border: "1px solid",
+    borderColor: "divider",
+    overflow: "hidden",
+    transition: "all 0.2s ease-in-out",
+    "&:hover": {
+      boxShadow: 2,
+    },
   },
 });

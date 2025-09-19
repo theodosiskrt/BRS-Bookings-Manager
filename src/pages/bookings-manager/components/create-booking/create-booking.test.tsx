@@ -39,7 +39,7 @@ describe("CreateBooking (basic)", () => {
     await user.click(getByTestId("create-booking-open-btn"));
 
     // Try to submit without filling required fields - Create button should be disabled
-    const createBtn = getByRole("button", { name: /^create$/i });
+    const createBtn = getByRole("button", { name: /create booking/i });
     expect(createBtn).toHaveProperty("disabled", true);
 
     // Fill required fields

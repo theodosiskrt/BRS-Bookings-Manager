@@ -26,9 +26,16 @@ const BookingsManager = () => {
   return (
     <Box sx={styles.container}>
       <Paper sx={styles.headerContainer}>
-        <Box>
-          <Typography variant="h4">Bookings Manager</Typography>
-          <Link href="https://theodosiskrt.github.io/portfolio/">
+        <Box sx={styles.titleSection}>
+          <Typography variant="h4" sx={styles.title}>
+            Bookings Manager
+          </Typography>
+          <Link 
+            href="https://theodosiskrt.github.io/portfolio/"
+            sx={styles.subtitle}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             Theodosis Karataris
           </Link>
         </Box>
@@ -45,7 +52,9 @@ const BookingsManager = () => {
           <CreateBooking setBookings={setBookings} />
         </Box>
       </Paper>
-      <BookingsList bookings={filteredBookings} error={error} />
+      <Paper sx={styles.contentContainer}>
+        <BookingsList bookings={filteredBookings} error={error} />
+      </Paper>
     </Box>
   );
 };

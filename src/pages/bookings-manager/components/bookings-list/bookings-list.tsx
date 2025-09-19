@@ -10,13 +10,14 @@ import {
   useTheme,
   Typography,
   Box,
+  Chip,
 } from "@mui/material";
 import { getStyles } from "./bookings-list.style";
 import type { Booking } from "../../types";
 import { formatDateRange } from "../../../../utils";
 import BookingPreview from "../booking-preview";
 import { useLayoutSize } from "../../../../hooks";
-import { Warning } from "@mui/icons-material";
+import { Warning, CheckCircle, Schedule, Cancel } from "@mui/icons-material";
 
 // Extend props for error support
 type BookingsListProps = {
@@ -45,17 +46,49 @@ const BookingsList = ({ bookings = [], error = null }: BookingsListProps) => {
     target?.blur();
   };
 
+  // Status chip helper function
+  const getStatusChip = (status: string) => {
+    const statusConfig = {
+      confirmed: {
+        icon: <CheckCircle />,
+        style: styles.statusConfirmed,
+        label: "Confirmed"
+      },
+      pending: {
+        icon: <Schedule />,
+        style: styles.statusPending,
+        label: "Pending"
+      },
+      cancelled: {
+        icon: <Cancel />,
+        style: styles.statusCancelled,
+        label: "Cancelled"
+      }
+    };
+
+    const config = statusConfig[status as keyof typeof statusConfig] || statusConfig.pending;
+    
+    return (
+      <Chip
+        icon={config.icon}
+        label={config.label}
+        size="small"
+        sx={{ ...styles.statusChip, ...config.style }}
+      />
+    );
+  };
+
   return (
     <Box sx={styles.container}>
-      <TableContainer component={Paper}>
+      <TableContainer>
         <Table sx={styles.table} stickyHeader>
           <TableHead>
             <TableRow>
-              <TableCell style={styles.headerCell}>ID</TableCell>
-              <TableCell style={styles.headerCell}>Customer</TableCell>
-              <TableCell style={styles.headerCell}>Vessel</TableCell>
-              <TableCell style={styles.headerCell}>Dates</TableCell>
-              <TableCell style={styles.headerCell}>Status</TableCell>
+              <TableCell sx={styles.headerCell}>ID</TableCell>
+              <TableCell sx={styles.headerCell}>Customer</TableCell>
+              <TableCell sx={styles.headerCell}>Vessel</TableCell>
+              <TableCell sx={styles.headerCell}>Dates</TableCell>
+              <TableCell sx={styles.headerCell}>Status</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -63,8 +96,10 @@ const BookingsList = ({ bookings = [], error = null }: BookingsListProps) => {
               <TableRow>
                 <TableCell align="center" colSpan={5}>
                   <Box sx={styles.errorContainer}>
-                    <Warning color="action" />
-                    {error}
+                    <Warning />
+                    <Typography variant="body1" fontWeight={500}>
+                      {error}
+                    </Typography>
                   </Box>
                 </TableCell>
               </TableRow>
@@ -72,7 +107,7 @@ const BookingsList = ({ bookings = [], error = null }: BookingsListProps) => {
               <TableRow>
                 <TableCell colSpan={5}>
                   <Box sx={styles.emptyState}>
-                    <Typography variant="body1" color="text.secondary">
+                    <Typography variant="body1" sx={styles.emptyStateText}>
                       No bookings found. Try searching by customer name.
                     </Typography>
                   </Box>
@@ -92,16 +127,31 @@ const BookingsList = ({ bookings = [], error = null }: BookingsListProps) => {
                     }
                   }}
                   sx={styles.row}
+                  aria-label={`View booking ${booking.id} for ${booking.customer}`}
                 >
-                  <TableCell sx={styles.tableCell}>{booking.id}</TableCell>
                   <TableCell sx={styles.tableCell}>
-                    {booking.customer}
+                    <Typography variant="body2" fontWeight={600} color="primary.main">
+                      #{booking.id}
+                    </Typography>
                   </TableCell>
-                  <TableCell sx={styles.tableCell}>{booking.vessel}</TableCell>
                   <TableCell sx={styles.tableCell}>
-                    {formatDateRange(booking.startDate, booking.endDate)}
+                    <Typography variant="body1" fontWeight={500}>
+                      {booking.customer}
+                    </Typography>
                   </TableCell>
-                  <TableCell sx={styles.tableCell}>{booking.status}</TableCell>
+                  <TableCell sx={styles.tableCell}>
+                    <Typography variant="body1">
+                      {booking.vessel}
+                    </Typography>
+                  </TableCell>
+                  <TableCell sx={styles.tableCell}>
+                    <Typography variant="body2" color="text.secondary">
+                      {formatDateRange(booking.startDate, booking.endDate)}
+                    </Typography>
+                  </TableCell>
+                  <TableCell sx={styles.tableCell}>
+                    {getStatusChip(booking.status)}
+                  </TableCell>
                 </TableRow>
               ))
             )}

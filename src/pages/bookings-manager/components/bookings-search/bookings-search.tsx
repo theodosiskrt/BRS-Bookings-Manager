@@ -40,34 +40,46 @@ const BookingsSearch = ({
         onSearch();
       }}
     >
-      <Box sx={styles.bar}>
-        <TextField
-          size="small"
-          value={query}
-          autoComplete=""
-          color="primary"
-          inputMode="search"
-          type="search"
-          label="Search bookings..."
-          onChange={(e) => setQuery(e.target.value)}
-          sx={styles.query}
-        />
-        <Button
-          type="submit"
-          startIcon={<Search />}
-          loading={loading}
-          size={largeLayout ? "large" : "small"}
-          variant="contained"
-          sx={styles.submit}
-        >
-          Search
-        </Button>
-        {/* <Box sx={styles.container}> */}
+      <Box sx={styles.container}>
+        <Box sx={styles.bar}>
+          <TextField
+            size="medium"
+            value={query}
+            autoComplete="off"
+            color="primary"
+            inputMode="search"
+            type="search"
+            label="Search bookings..."
+            placeholder="Enter customer name..."
+            onChange={(e) => setQuery(e.target.value)}
+            sx={styles.query}
+            InputProps={{
+              sx: {
+                borderRadius: 2,
+                "& .MuiOutlinedInput-notchedOutline": {
+                  borderColor: "divider",
+                },
+                "&:hover .MuiOutlinedInput-notchedOutline": {
+                  borderColor: "primary.main",
+                },
+              },
+            }}
+          />
+          <Button
+            type="submit"
+            startIcon={<Search />}
+            disabled={loading}
+            size="large"
+            variant="contained"
+            sx={styles.submit}
+          >
+            {loading ? "Searching..." : "Search"}
+          </Button>
+        </Box>
         <Box sx={styles.filters}>
           <BookingsFilters filters={filters} setFilters={setFilters} />
         </Box>
       </Box>
-      {/* </Box> */}
     </form>
   );
 };

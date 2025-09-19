@@ -111,15 +111,26 @@ const CreateBooking = ({
       <Button
         onClick={openModal}
         data-testid="create-booking-open-btn"
-        size={largeLayout ? "large" : "small"}
+        size="large"
         variant="contained"
         startIcon={<Add />}
+        sx={styles.createButton}
       >
         Create Booking
       </Button>
 
-      <Dialog open={open} onClose={closeModal} fullWidth maxWidth="sm">
-        <DialogTitle>Create Booking</DialogTitle>
+      <Dialog 
+        open={open} 
+        onClose={closeModal} 
+        fullWidth 
+        maxWidth="sm"
+        PaperProps={{
+          sx: { borderRadius: 3 }
+        }}
+      >
+        <DialogTitle sx={styles.dialogTitle}>
+          Create New Booking
+        </DialogTitle>
         <DialogContent>
           <Stack sx={styles.dialogContent}>
             <TextField
@@ -200,14 +211,20 @@ const CreateBooking = ({
             />
           </Stack>
         </DialogContent>
-        <DialogActions>
-          <Button onClick={closeModal}>Cancel</Button>
+        <DialogActions sx={styles.dialogActions}>
+          <Button 
+            onClick={closeModal}
+            sx={styles.cancelButton}
+          >
+            Cancel
+          </Button>
           <Button
             variant="contained"
             onClick={handleSubmit}
             disabled={!isValid()}
+            sx={styles.submitButton}
           >
-            Create
+            Create Booking
           </Button>
         </DialogActions>
       </Dialog>
