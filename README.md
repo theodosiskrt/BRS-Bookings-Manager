@@ -20,7 +20,7 @@ npm run build
 
 ## Technology Stack
 
-- **React 18/19** + **TypeScript** - Modern frontend with type safety
+- **React 19** + **TypeScript** - Modern frontend with type safety
 - **Vite** - Fast build tool and dev server
 - **Material-UI v7** - Professional UI components
 - **Vitest** + **React Testing Library** - Comprehensive testing
@@ -37,4 +37,4 @@ npm run build
 
 ## Documentation
 
-For detailed technology analysis and scaling recommendations, see [TECHNOLOGY_ANALYSIS.md](./TECHNOLOGY_ANALYSIS.md).
+For detailed technology analysis, see [TECHNOLOGY_ANALYSIS.md](./TECHNOLOGY_ANALYSIS.md).
