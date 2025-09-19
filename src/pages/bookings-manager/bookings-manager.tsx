@@ -1,4 +1,4 @@
-import { Typography, Paper, Box } from "@mui/material";
+import { Typography, Paper, Box, Link } from "@mui/material";
 import { useMemo, useState } from "react";
 import type { Filters } from "./types";
 import { getStyles } from "./booking-manager.style";
@@ -15,24 +15,38 @@ const BookingsManager = () => {
     status: "all",
     date: { from: "", to: "" },
   });
+  const largeLayout = useLayoutSize();
+
   const filteredBookings = useMemo(
     () => filterBookings(filters, bookings),
     [filters, bookings]
   );
-  const largeLayout = useLayoutSize();
   const styles = getStyles(largeLayout);
 
   return (
     <Box sx={styles.container}>
       <Paper sx={styles.headerContainer}>
-        <Typography variant="h4">Bookings Manager</Typography>
+        <Box>
+          <Typography variant="h4">Bookings Manager</Typography>
+          <Link href="https://theodosiskrt.github.io/portfolio/">
+            Theodosis Karataris
+          </Link>
+        </Box>
         <Box sx={styles.actionsContainer}>
-          <BookingsSearch
-            filters={filters}
-            setFilters={setFilters}
-            setBookings={setBookings}
-            setError={setError}
-          />
+          <Box
+            sx={{
+              flexGrow: 1,
+              flexShrink: 1,
+            }}
+          >
+            <BookingsSearch
+              filters={filters}
+              setFilters={setFilters}
+              setBookings={setBookings}
+              setError={setError}
+            />
+          </Box>
+
           <CreateBooking setBookings={setBookings} />
         </Box>
       </Paper>

@@ -13,9 +13,7 @@ export const getStyles = (theme: Theme, largeLayout: boolean) => ({
       backgroundColor: theme.palette.background.card,
     },
   },
-  table: {
-    minWidth: 600,
-  },
+
   errorContainer: {
     display: "flex",
     alignItems: "center",
@@ -27,5 +25,8 @@ export const getStyles = (theme: Theme, largeLayout: boolean) => ({
   },
   tableCell: {
     p: largeLayout ? 2 : 1,
+  },
+  table: {
+    minWidth: 625,
   },
 });

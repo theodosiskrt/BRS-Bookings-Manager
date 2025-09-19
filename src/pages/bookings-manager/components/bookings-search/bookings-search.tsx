@@ -1,10 +1,11 @@
 import { Search } from "@mui/icons-material";
-import { Button, Grid, TextField } from "@mui/material";
+import { Button, Box, TextField } from "@mui/material";
 import type { Booking, Filters } from "../../types";
 import { useCallback, useState } from "react";
 import { bookingsApi } from "../../../../api";
 import BookingsFilters from "../bookings-filters";
-import { styles } from "./bookings-search.style";
+import { getStyles } from "./bookings-search.style";
+import { useLayoutSize } from "../../../../hooks";
 
 const BookingsSearch = ({
   setBookings,
@@ -19,6 +20,9 @@ const BookingsSearch = ({
 }) => {
   const [query, setQuery] = useState("");
   const [loading, setLoading] = useState(false);
+  const largeLayout = useLayoutSize();
+
+  const styles = getStyles(largeLayout);
 
   const onSearch = useCallback(() => {
     setLoading(true);
@@ -36,9 +40,9 @@ const BookingsSearch = ({
         onSearch();
       }}
     >
-      <Grid size={12} sx={styles.container}>
-        <BookingsFilters filters={filters} setFilters={setFilters} />
+      <Box sx={styles.bar}>
         <TextField
+          size="small"
           value={query}
           autoComplete=""
           color="primary"
@@ -46,17 +50,24 @@ const BookingsSearch = ({
           type="search"
           label="Search bookings..."
           onChange={(e) => setQuery(e.target.value)}
+          sx={styles.query}
         />
         <Button
           type="submit"
           startIcon={<Search />}
           loading={loading}
-          size="large"
+          size={largeLayout ? "large" : "small"}
           variant="contained"
+          sx={styles.submit}
         >
           Search
         </Button>
-      </Grid>
+        {/* <Box sx={styles.container}> */}
+        <Box sx={styles.filters}>
+          <BookingsFilters filters={filters} setFilters={setFilters} />
+        </Box>
+      </Box>
+      {/* </Box> */}
     </form>
   );
 };

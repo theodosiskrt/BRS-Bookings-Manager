@@ -6,13 +6,13 @@ import {
   DialogActions,
   TextField,
   Button,
-  IconButton,
   MenuItem,
   Stack,
 } from "@mui/material";
-import AddIcon from "@mui/icons-material/Add";
 import type { Booking } from "../../types";
 import type React from "react";
+import { Add } from "@mui/icons-material";
+import { useLayoutSize } from "../../../../hooks";
 
 const STATUS_OPTIONS = ["confirmed", "pending", "cancelled"] as const;
 
@@ -21,6 +21,7 @@ const CreateBooking = ({
 }: {
   setBookings: React.Dispatch<React.SetStateAction<Booking[]>>;
 }) => {
+  const largeLayout = useLayoutSize();
   const [open, setOpen] = useState(false);
   const [form, setForm] = useState({
     id: "",
@@ -105,13 +106,14 @@ const CreateBooking = ({
 
   return (
     <>
-      <IconButton
-        color="primary"
+      <Button
         onClick={openModal}
-        aria-label="Create booking"
+        size={largeLayout ? "large" : "small"}
+        variant="contained"
+        startIcon={<Add />}
       >
-        <AddIcon />
-      </IconButton>
+        Create Booking
+      </Button>
 
       <Dialog open={open} onClose={closeModal} fullWidth maxWidth="sm">
         <DialogTitle>Create Booking</DialogTitle>

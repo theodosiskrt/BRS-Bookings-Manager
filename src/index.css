@@ -1,6 +1,7 @@
 /* Global layout helpers to prevent viewport overflow and enable proper scrolling */
 html, body, #root {
     height: 100%;
+    width:100%;
 }
 
 *, *::before, *::after {
@@ -13,4 +14,5 @@ body, #root {
     margin: 0;
     background-color: #fafafa;
     min-height: 100vh;
+    max-width: 100vw
 }

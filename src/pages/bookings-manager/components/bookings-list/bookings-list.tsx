@@ -46,9 +46,7 @@ const BookingsList = ({ bookings = [], error = null }: BookingsListProps) => {
   };
 
   return (
-    <Box
-      sx={{ display: "flex", flexDirection: "column", flex: 1, minHeight: 0 }}
-    >
+    <Box sx={{ display: "flex", flex: 1, minHeight: 0 }}>
       <TableContainer component={Paper}>
         <Table sx={styles.table} stickyHeader>
           <TableHead>
