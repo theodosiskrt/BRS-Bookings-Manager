@@ -56,7 +56,7 @@ const BookingsSearch = ({
           type="submit"
           startIcon={<Search />}
           loading={loading}
-          size={largeLayout ? "large" : "small"}
+          size="small"
           variant="contained"
           sx={styles.submit}
         >
