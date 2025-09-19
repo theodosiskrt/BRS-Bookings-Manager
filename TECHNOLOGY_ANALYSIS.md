@@ -172,7 +172,7 @@ I would take the time to set up:
 
 For large-scale expansion, the key areas I would focus on are:
 
-1. **Custom Design System**: Building a unique design system for better branding and performance.
+1. **Custom Design System** for better branding and performance.
 2. **Robust state management** for complex data flows
 3. **Real backend integration** with proper database design
 4. **Performance optimization** for handling large datasets
